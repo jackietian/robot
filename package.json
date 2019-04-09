@@ -1,0 +1,23 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackietian/robot.git"
+  },
+  "author": "Jackie Tian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackietian/robot/issues"
+  },
+  "homepage": "https://github.com/jackietian/robot#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
