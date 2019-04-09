@@ -1,5 +1,5 @@
 # robot movements
-NodeJS solution with object oritented design.
+NodeJS solution with object oriented design.
 
 ## start
 ``` npm start ```
