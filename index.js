@@ -1,10 +1,20 @@
+const fs = require('fs');
+const path = require('path');
 const Robot = require('./src/Robot');
 
-const robot = new Robot();
-robot.place(1,2,"EAST");
-robot.move();
-robot.move();
-robot.left();
-robot.move();
-robot.report();
-// PLACE 0,0,NORTH MOVE REPORT
+// read all files in test data directory
+const testDataDir = path.join(__dirname, 'src/data/');
+fs.readdir(testDataDir, 'utf8', (err, content) => {
+    const filesInBasePath = content;
+    // loop through every test data file
+    filesInBasePath.forEach(file => {
+        fs.readFile(path.join(testDataDir, file), 'utf8', function (err, content) {
+            if(err) throw new Error(err);
+            // execute each commond
+            console.log('-------------------');
+            console.log(`input:\n${content}`);
+            const robot = new Robot();
+            robot.execute(content);
+        });
+    });
+});
