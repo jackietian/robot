@@ -1,7 +1,8 @@
-# robot movements
+# robot
 NodeJS solution with object oriented design.
- - Robot is on a table 5 * 5
- - Robot has properties: 
+ - Robot has properties:
+    - sizeX: table size of x, default is 5
+    - sizeY: table size of y, default is 5 
     - x: position on x axis
     - y: position on y axis
     - f: facing direction

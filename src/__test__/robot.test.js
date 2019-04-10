@@ -4,11 +4,6 @@ const {
     SOUTH,
     EAST,
     WEST,
-    REPORT,
-    MOVE,
-    PLACE,
-    LEFT,
-    RIGHT
 } = require('../constants');
 
 describe('test Robot', () => {
@@ -57,14 +52,13 @@ describe('test Robot', () => {
 
     it('test Robot move', () => {
         const robot = new Robot();
-        console.log(robot);
         robot.move();
         expect(robot.x).toBe(0);
         expect(robot.y).toBe(1);
         expect(robot.f).toBe(NORTH);
     })
 
-    it('test Robot move beyong xLength', () => {
+    it('test Robot move beyong sizeX', () => {
         const robot = new Robot();
         robot.place(4, 4, EAST);
         robot.move();
@@ -73,7 +67,7 @@ describe('test Robot', () => {
         expect(robot.f).toBe(EAST);
     })
 
-    it('test Robot move beyong yLength', () => {
+    it('test Robot move beyong sizeY', () => {
         const robot = new Robot();
         robot.place(4, 4, NORTH);
         robot.move();

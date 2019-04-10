@@ -11,9 +11,9 @@ const {
 } = require('./constants');
 
 class Robot {
-    constructor(xLength = 5, yLength = 5, x = 0, y = 0, f = NORTH) {
-        this.xLength = xLength;
-        this.yLength = yLength;
+    constructor(sizeX = 5, sizeY = 5, x = 0, y = 0, f = NORTH) {
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
         this.x = x;
         this.y = y;
         this.f = f;
@@ -61,8 +61,8 @@ class Robot {
      */
     place(x, y, f) {
         // when placing invalid positions, do nothing
-        if(x < 0 || x >= this.xLength) return;
-        if(y < 0 || y >= this.yLength) return;
+        if(x < 0 || x >= this.sizeX) return;
+        if(y < 0 || y >= this.sizeY) return;
 
         this.x = x;
         this.y = y;
@@ -116,13 +116,13 @@ class Robot {
     move() {
         switch (this.f) {
             case NORTH:
-                if(this.y + 1 < this.yLength) this.y++;
+                if(this.y + 1 < this.sizeY) this.y++;
                 break;
             case SOUTH:
                 if(this.y > 0) this.y--;
                 break;
             case EAST:
-                if(this.x + 1 < this.xLength) this.x++;
+                if(this.x + 1 < this.sizeX) this.x++;
                 break;
             case WEST:
             default:
