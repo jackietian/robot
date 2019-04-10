@@ -57,7 +57,7 @@ class Robot {
     }
 
     /**
-     * place robot in the table
+     * place robot on the table
      */
     place(x, y, f) {
         // when placing invalid positions, do nothing
@@ -90,7 +90,7 @@ class Robot {
     }
 
     /**
-     * turn facing direction to right
+     * turn right based on facing direction
      */
     right() {
         switch (this.f) {

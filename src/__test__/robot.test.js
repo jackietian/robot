@@ -21,7 +21,7 @@ describe('test Robot', () => {
 
     it('test Robot place', () => {
         const robot = new Robot();
-        robot.place(1,1,EAST);
+        robot.place(1, 1, EAST);
         expect(robot.x).toBe(1);
         expect(robot.y).toBe(1);
         expect(robot.f).toBe(EAST);
@@ -29,7 +29,7 @@ describe('test Robot', () => {
 
     it('test Robot place edge cases larger than length', () => {
         const robot = new Robot();
-        robot.place(5,5,EAST);
+        robot.place(5, 5, EAST);
         expect(robot.x).toBe(0);
         expect(robot.y).toBe(0);
         expect(robot.f).toBe(NORTH);
@@ -37,7 +37,7 @@ describe('test Robot', () => {
 
     it('test Robot place edge cases lower than 0', () => {
         const robot = new Robot();
-        robot.place(-1,-1,EAST);
+        robot.place(-1, -1, EAST);
         expect(robot.x).toBe(0);
         expect(robot.y).toBe(0);
         expect(robot.f).toBe(NORTH);
@@ -66,7 +66,7 @@ describe('test Robot', () => {
 
     it('test Robot move beyong xLength', () => {
         const robot = new Robot();
-        robot.place(4,4,EAST);
+        robot.place(4, 4, EAST);
         robot.move();
         expect(robot.x).toBe(4);
         expect(robot.y).toBe(4);
@@ -75,10 +75,20 @@ describe('test Robot', () => {
 
     it('test Robot move beyong yLength', () => {
         const robot = new Robot();
-        robot.place(4,4,NORTH);
+        robot.place(4, 4, NORTH);
         robot.move();
         expect(robot.x).toBe(4);
         expect(robot.y).toBe(4);
         expect(robot.f).toBe(NORTH);
+    })
+
+    it('test Robot parsePlaceCommand', () => {
+        const robot = new Robot();
+        const res = robot.parsePlaceCommand('PLACE 0,0,NORTH');
+        expect(res).toEqual({
+            x: 0,
+            y: 0,
+            f: NORTH
+        });
     })
 })

@@ -9,7 +9,7 @@ fs.readdir(testDataDir, 'utf8', (err, content) => {
     // loop through every test data file
     filesInBasePath.forEach(file => {
         fs.readFile(path.join(testDataDir, file), 'utf8', function (err, content) {
-            if(err) throw new Error(err);
+            if(err) throw err;
             // execute each commond
             console.log('-------------------');
             console.log(`input:\n${content}`);
